@@ -5,7 +5,8 @@ from django.shortcuts import render
 
 
 def hello(request):
-    return render(request, "hello.html", {})
+    context = {'message': 'Hello'}
+    return render(request, "hello.html", context)
 
 
 def hello1(request):
