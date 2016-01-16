@@ -3,10 +3,26 @@ import datetime
 
 from django.views.generic import TemplateView
 
+from .forms import LoginForm
 from models import Dreamreal
 from django.http import HttpResponse
 
 # Create your views here.
+
+
+def login(request):
+    username = "not logged in"
+
+    if request.method == "POST":
+        #Get the posted form
+        myLoginForm = LoginForm(request.POST)
+
+        if myLoginForm.is_valid():
+         username = myLoginForm.cleaned_data['username']
+    else:
+        myLoginForm = LoginForm()
+
+    return render(request, 'loggedin.html', {"username": username})
 
 
 def hello(request):
