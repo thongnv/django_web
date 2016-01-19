@@ -35,7 +35,7 @@ class LoginView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             # <process form cleaned data>
-            return HttpResponseRedirect('/login/')
+            return HttpResponseRedirect('/polls/')
 
         return render(request, self.template_name, {'form': form})
 
