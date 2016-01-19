@@ -1,24 +1,63 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.sites import requests
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views import generic
 from django.views.generic import View
+from . forms import LoginForm
 
 # index view (just redirect to login page)
 
 
-class IndexView(generic.TemplateView):
+class IndexView(View):
+    template_name = 'logged_in.html'
+    form_class = LoginForm
+    initial = {'key': 'value'}
+
+    def get(self, request):
+        form = self.form_class(self.initial)
+        return render(request, self.template_name, {'form': form})
+
+
+class LoginView(View):
     template_name = 'login.html'
+    form_class = LoginForm
+    initial = {'key': 'value'}
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # <process form cleaned data>
+            return HttpResponseRedirect('/login/')
+
+        return render(request, self.template_name, {'form': form})
 
 
-# this view will run after successfully login
 @login_required
 def logged_in(request):
     return render_to_response('logged_in.html', context_instance=RequestContext(request))
 
 
-class MyView(LoginRequiredMixin, View):
-    login_url = '/login/'
-    redirect_field_name = 'redirect_to'
+class ProfileView(View):
+    form_class = LoginForm
+    initial = {'key': 'value'}
+    template_name = 'login.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(self.initial)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # <process form cleaned data>
+            return HttpResponseRedirect('/login/logged_in/')
+
+        return render(request, self.template_name, {'form': form})
