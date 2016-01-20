@@ -2,13 +2,14 @@ import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites import requests
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views import generic
 from django.views.generic import View
 from . forms import LoginForm
+from . models import user_list
 
 # index view (just redirect to login page)
 
@@ -32,12 +33,15 @@ class LoginView(View):
         return render(request, self.template_name)
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            # <process form cleaned data>
-            return HttpResponseRedirect('/polls/')
+        data = request.POST
+        for user in user_list:
+            if user.email == data.get('email'):
+                if user.password == data.get('password'):
+                    request.session['member'] = user.name
+                    return HttpResponseRedirect('/index/')
 
-        return render(request, self.template_name, {'form': form})
+        return HttpResponse("Your username and password didn't match.")
+            # return HttpResponseRedirect('/index/')
 
 
 @login_required
