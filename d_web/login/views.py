@@ -41,7 +41,7 @@ class LoginView(View):
                     return HttpResponseRedirect('/index/')
 
         return HttpResponse("Your username and password didn't match.")
-            # return HttpResponseRedirect('/index/')
+        # return HttpResponseRedirect('/index/')
 
 
 @login_required

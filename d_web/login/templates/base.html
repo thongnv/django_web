@@ -1,20 +1,8 @@
-{% load i18n %}
-{% load staticfiles %}
-<head>
-<title>{% block title %}{% endblock %}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-{% block extrameta %}{% endblock %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" />
-{% block extrastyle %}{% endblock %}
-
-</head>
-<body class="{% block bodyclass %}{% endblock %}">
-  <div class="container">
-    {% block content %}
-		{% endblock %}
+<body>
+    <div class="container">
+        {% block content %}
+            BASE HTML
+        {% endblock %}
     <footer></footer>
-  </div>
-  </body>
-</html>
+    </div>
+</body>
