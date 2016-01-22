@@ -1,0 +1,16 @@
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+#simpleControls {
+    text-align: center;
+    -webkit-user-select: none;
+}
+
+#simpleControls .control {
+    cursor: pointer;
+    color: #000;
+}

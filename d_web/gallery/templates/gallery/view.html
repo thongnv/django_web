@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <title>My hot gallery</title>
+    <link rel="stylesheet" href="{% static 'gallery/css/style.css' %}" type="text/css" />
+    <script type="javascript" rel="script" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script type="javascript" rel="script" src="{% static 'gallery/js/gallery.js' %}"></script>
 </head>
 <body>
-Under construction
-WAIT FOR A SEC...
+
+<div id="canvasWrapper">
+    <div id="canvas">
+
+      <div id="headerWrapper">
+      <header id="header">
+
+        <div id="logo" data-content-field="site-title">
+
+            <h1 class="logo" data-shrink-original-size="40" style="letter-spacing: 0.075em;">
+              <a href="/">
+
+                  Liberty Netuschil
+
+              </a>
+            </h1>
+
+        </div>
+
+        <div id="topNav">
+          <nav class="main-nav dropdown-hover"></nav>
+        </div>
+
+        <div id="backToThumbs">×</div>
+
+      </header>
+      </div>
+
+
+
+      <div id="pageWrapper">
+      <section id="page">
+
+        <div id="mainContent" class="clear" role="main" data-content-field="main-content">
+
+
+        <div id="galleryWrapper">
+          <div id="slideshowWrapper" style="height: 600px;" class="slideshow-ready">
+            <div id="slideshow" class="sqs-gallery-design-stacked">
+
+
+                <div class="slide sqs-gallery-design-stacked-slide loaded sqs-active-slide"
+                     data-slide-id="568cac6a4bf1182258ec0627"
+                     data-slide-url="k6jqjqpz64ntxg3dtkt9pn3gs93m2t"
+                     id="yui_3_17_2_1_1453482525594_743"
+                     data-type="image" style="opacity: 1; z-index: 889;">
+                  <img data-src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/568cac6a4bf1182258ec0627/1452059811452/IMG_3465.JPG"
+                       data-image="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/568cac6a4bf1182258ec0627/1452059811452/IMG_3465.JPG"
+                       data-image-dimensions="1536x2304"
+                       data-image-focal-point="0.5,0.5"
+                       data-load="false"
+                       style="font-size: 0px; top: 0px; left: 394px; width: 400px; height: 600px; position: relative;"
+                       id="yui_3_17_2_1_1453482525594_21001" alt="IMG_3465.JPG" class="loaded"
+                       src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/568cac6a4bf1182258ec0627/1452059811452/IMG_3465.JPG?format=500w"
+                       data-image-resolution="500w">
+
+                </div>
+
+
+            </div>
+
+          </div>
+
+          <div id="simpleControls">
+              <span class="control prev-slide">prev</span> / <span class="control next-slide">next</span>
+          </div>
+
+        </div>
+
+              </section>
+              </div>
+
+            </div>
+  </div>
 </body>
 </html>
