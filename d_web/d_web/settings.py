@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'polls.apps.PollsConfig',
-    'login'
+    'login',
+    'gallery'
 ]
 
 MIDDLEWARE_CLASSES = [
