@@ -1,16 +1,100 @@
 .center {
     margin: auto;
     width: 60%;
-    border: 3px solid #73AD21;
     padding: 10px;
+}
+
+img {
+    max-height:100%;
+}
+
+body {
+    font-family: Helvetica,arial,sans-serif;
+    font-weight: normal;
+    line-height: 1.6em;
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-family: "Alice";
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    -webkit-font-smoothing: subpixel antialiasing !important;
+}
+
+#headerWrapper {
+    position: relative;
+    z-index: 999;
+}
+
+#header {
+    padding-bottom: 40px;
+}
+
+#canvas {
+    padding: 30px;
+}
+
+#header:before, #page:before, #footer:before, footer:before, .clear:before, #header:after, #page:after, #footer:after, footer:after, .clear:after {
+    content: "";
+    display: table;
+}
+
+#header:after, #page:after, #footer:after, footer:after, .clear:after {
+    clear: both;
 }
 
 #simpleControls {
     text-align: center;
     -webkit-user-select: none;
+    color: #9c9c9c;
+    margin-top: 20px;
 }
 
 #simpleControls .control {
     cursor: pointer;
     color: #000;
+}
+
+a, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+#logo .logo {
+    margin: 0;
+    font-weight: normal;
+    text-transform: normal;
+    font-size: 36px;
+    letter-spacing: 0px;
+    font-family: "Josefin Sans";
+    line-height: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.slide .loaded {
+    font-size: 0px;
+    top: 0px;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#backToThumbs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px;
+    margin: -20px;
 }
