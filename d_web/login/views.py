@@ -15,11 +15,13 @@ from . models import user_list
 
 
 class IndexView(View):
-    template_name = 'logged_in.html'
+    template_name = 'home.html'
     form_class = LoginForm
     initial = {'key': 'value'}
 
     def get(self, request):
+        if not request.session:
+            return HttpResponseRedirect('/')
         form = self.form_class(self.initial)
         return render(request, self.template_name, {'form': form})
 
@@ -38,7 +40,7 @@ class LoginView(View):
             if user.email == data.get('email'):
                 if user.password == data.get('password'):
                     request.session['member'] = user.name
-                    return HttpResponseRedirect('/index/')
+                    return HttpResponseRedirect('/home/')
 
         return HttpResponse("Your username and password didn't match.")
         # return HttpResponseRedirect('/index/')

@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'login/css/home.css' %}">
+</head>
+<body>
+    Welcome home! {{ data.email }} <a href="/">Log out</a>
+    <div id="r-slider-category-wrapper">
+        <ul>
+            <li><a href="/home/">Home</a> </li>
+            <li><a href="/gallery/">Gallery</a> </li>
+            <li><a href="/polls/">Polls</a></li>
+        </ul>
+    </div>
+</body>
+</html>

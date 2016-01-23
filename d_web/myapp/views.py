@@ -28,7 +28,7 @@ def login(request):
 def hello(request):
     daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     context = {'message': 'Hello', 'today': datetime.datetime.now().date(), 'day_of_week': daysOfWeek}
-    return render(request, 'hello.html', context)
+    return render(request, 'myapp/hello.html', context)
 
 
 def static(request):

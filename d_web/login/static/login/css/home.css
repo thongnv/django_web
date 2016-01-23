@@ -1,0 +1,49 @@
+body {
+    font-family: Helvetica neue, Arial, Tahoma;
+    font-size: 16px;
+    background: black url("../images/home_bgrd.jpg");
+    background-size: 100% 100%;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+#r-slider-category-wrapper ul li a {
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+    text-decoration: none !important;
+    padding: 29px 20px 30px;
+    background: #fff;
+    color: #545454;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+a {
+    text-decoration: none;
+}
+
+#r-slider-category-wrapper ul li {
+    float: left;
+}
+
+#r-slider-category-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
