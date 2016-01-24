@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/signin.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'login/bootstrap/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'login/bootstrap/css/signin.css' %}" />
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,
     700,900italic,900" rel="stylesheet" type="text/css">
 
@@ -11,12 +11,12 @@
 <section class="container">
     <section class="login-form">
     <section>
-        <img src="{% static 'images/logo.png' %}" alt="" />
+        <img src="{% static 'login/images/logo.png' %}" alt="" />
         <h4>Sign in with your Account</h4>
     </section>
     <form method="post" action="" role="login">
         {% csrf_token %}
-        <img src="{% static 'images/user.png' %}" alt="" />
+        <img src="{% static 'login/images/user.png' %}" alt="" />
         <input type="email" name="email" required placeholder="Email" class="form-control input-lg" />
         <input type="password" name="password" required placeholder="Password" class="form-control input-lg" />
         <button type="submit" name="go" class="btn btn-block btn-info">Sign in</button>

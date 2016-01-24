@@ -20,7 +20,11 @@ class IndexView(View):
     initial = {'key': 'value'}
 
     def get(self, request):
-        if not request.session:
+        """
+
+        :type request:
+        """
+        if not request.session.get('member'):
             return HttpResponseRedirect('/')
         form = self.form_class(self.initial)
         return render(request, self.template_name, {'form': form})
@@ -46,9 +50,17 @@ class LoginView(View):
         # return HttpResponseRedirect('/index/')
 
 
+def logout(request):
+    try:
+        del request.session['member']
+    except KeyError:
+        pass
+    return render(request, "logout.html")
+
+
 @login_required
 def logged_in(request):
-    return render_to_response('logged_in.html', context_instance=RequestContext(request))
+    return render_to_response('home.html', context_instance=RequestContext(request))
 
 
 class ProfileView(View):
