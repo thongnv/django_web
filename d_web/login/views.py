@@ -7,6 +7,7 @@ from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views import generic
+from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from . forms import LoginForm
 from . models import user_list
@@ -24,9 +25,11 @@ class IndexView(View):
 
         :type request:
         """
-        if not request.session.get('member'):
+        if not request.user.is_active:
             return HttpResponseRedirect('/')
         form = self.form_class(self.initial)
+        if request.session.test_cookie_worked():
+            request.session.delete_test_cookie()
         return render(request, self.template_name, {'form': form})
 
 
@@ -39,22 +42,24 @@ class LoginView(View):
         return render(request, self.template_name)
 
     def post(self, request, *args, **kwargs):
-        data = request.POST
-        for user in user_list:
-            if user.email == data.get('email'):
-                if user.password == data.get('password'):
-                    request.session['member'] = user.name
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                request.session.set_test_cookie()
+                if request.session.test_cookie_worked():
+                    request.session.delete_test_cookie()
                     return HttpResponseRedirect('/home/')
-
-        return HttpResponse("Your username and password didn't match.")
+                else:
+                    return HttpResponse("Please enable cookies and try again.")
+        return render(request, self.template_name)
         # return HttpResponseRedirect('/index/')
 
 
-def logout(request):
-    try:
-        del request.session['member']
-    except KeyError:
-        pass
+def logout_view(request):
+    logout(request)
     return render(request, "logout.html")
 
 

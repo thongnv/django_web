@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'login/css/home.css' %}">
 </head>
 <body>
-    Welcome home! {{ request.session.member }} <a href="/logout/">Log out</a>
+    Welcome home! {{ request.user }} <a href="/logout/">Log out</a>
     <div id="r-slider-category-wrapper">
         <ul>
             <li><a href="/home/">Home</a> </li>
