@@ -3,19 +3,20 @@ import json
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites import requests
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
+
 from . forms import LoginForm
 from . models import user_list
 
 # index view (just redirect to login page)
 
 
-class IndexView(View):
+class IndexView(LoginRequiredMixin, View):
     template_name = 'home.html'
     form_class = LoginForm
     initial = {'key': 'value'}
@@ -26,7 +27,7 @@ class IndexView(View):
         :type request:
         """
         if not request.user.is_active:
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/login/')
         form = self.form_class(self.initial)
         if request.session.test_cookie_worked():
             request.session.delete_test_cookie()
@@ -39,6 +40,7 @@ class LoginView(View):
     initial = {'key': 'value'}
 
     def get(self, request, *args, **kwargs):
+        request.session.set_test_cookie()
         return render(request, self.template_name)
 
     def post(self, request, *args, **kwargs):
@@ -48,10 +50,13 @@ class LoginView(View):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                request.session.set_test_cookie()
+
                 if request.session.test_cookie_worked():
                     request.session.delete_test_cookie()
-                    return HttpResponseRedirect('/home/')
+                    path = request.GET.get('next')
+                    if path in [None, '', u'']:
+                        path = '/home/'
+                    return HttpResponseRedirect(path)
                 else:
                     return HttpResponse("Please enable cookies and try again.")
         return render(request, self.template_name)

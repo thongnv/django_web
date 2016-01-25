@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'polls.apps.PollsConfig',
-    'login',
+    'login.apps.LoginConfig',
     'gallery'
 ]
 
@@ -123,4 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = '/logged_in'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
