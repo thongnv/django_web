@@ -1,3 +1,28 @@
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.account {
+    float: right !important;
+}
+
+li {
+    list-style-type: none;
+}
+
 body {
     font-family: Helvetica neue, Arial, Tahoma;
     font-size: 16px;

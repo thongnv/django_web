@@ -1,19 +1,14 @@
 import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.sites import requests
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response, render, redirect
+from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
-from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 
 from . forms import LoginForm
-from . models import user_list
-
-# index view (just redirect to login page)
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -40,6 +35,8 @@ class LoginView(View):
     initial = {'key': 'value'}
 
     def get(self, request, *args, **kwargs):
+        if request.user.is_active:
+            return HttpResponseRedirect('/home/')
         request.session.set_test_cookie()
         return render(request, self.template_name)
 
@@ -60,7 +57,6 @@ class LoginView(View):
                 else:
                     return HttpResponse("Please enable cookies and try again.")
         return render(request, self.template_name)
-        # return HttpResponseRedirect('/index/')
 
 
 def logout_view(request):
