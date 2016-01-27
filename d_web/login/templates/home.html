@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -29,11 +29,15 @@
                     <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
                     </li>
-                    <li>
-                        <a href="#">{{ request.user }}</a>
-                    </li>
-                    <li>
-                        <a href="/logout/">Log out</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.user }}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/logout/">Log out</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -58,40 +62,36 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
+                    <a href="/gallery/"><img src="http://placehold.it/800x500" alt=""></a>
                     <div class="caption">
-                        <h3><li><a href="/gallery/">Gallery</a> </li></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>Gallery</h3>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3><li><a href="/polls/">Polls</a></li></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="thumbnail">
+                        <a href="/polls/"><img src="http://placehold.it/800x500" alt=""></a>
+                        <div class="caption">
+                            <h3>Polls</h3>
+                        </div>
                     </div>
-                </div>
             </div>
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
+                    <a href="#"><img src="http://placehold.it/800x500" alt=""></a>
                     <div class="caption">
                         <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
+                    <a href="#"><img src="http://placehold.it/800x500" alt=""></a>
                     <div class="caption">
                         <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
