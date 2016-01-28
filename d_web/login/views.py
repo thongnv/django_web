@@ -12,7 +12,7 @@ from . forms import LoginForm
 
 
 class IndexView(LoginRequiredMixin, View):
-    template_name = 'home.html'
+    template_name = 'login/home.html'
     form_class = LoginForm
     initial = {'key': 'value'}
 
@@ -30,7 +30,7 @@ class IndexView(LoginRequiredMixin, View):
 
 
 class LoginView(View):
-    template_name = 'login.html'
+    template_name = 'login/login.html'
     form_class = LoginForm
     initial = {'key': 'value'}
 
@@ -61,18 +61,18 @@ class LoginView(View):
 
 def logout_view(request):
     logout(request)
-    return render(request, "logout.html")
+    return render(request, "login/logout.html")
 
 
 @login_required
 def logged_in(request):
-    return render_to_response('home.html', context_instance=RequestContext(request))
+    return render_to_response('login/home.html', context_instance=RequestContext(request))
 
 
 class ProfileView(View):
     form_class = LoginForm
     initial = {'key': 'value'}
-    template_name = 'login.html'
+    template_name = 'login/login.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(self.initial)
