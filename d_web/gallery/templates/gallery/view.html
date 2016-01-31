@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <title>My hot gallery</title>
     <link rel="stylesheet" href="{% static 'gallery/css/style.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'bjqs/css/bjqs.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'plugin/gridster/jquery.gridster.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'plugin/bjqs/css/bjqs.css' %}" type="text/css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="{% static 'gallery/js/gallery.js' %}"></script>
-    <script src="{% static 'bjqs/js/bjqs-1.3.js' %}"></script>
+    <script src="{% static 'plugin/gridster/jquery.gridster.js' %}"></script>
+    <script src="{% static 'plugin/bjqs/js/bjqs-1.3.js' %}"></script>
 </head>
 <body>
 
@@ -22,16 +24,26 @@
 
             <h1 class="logo" data-shrink-original-size="40" style="letter-spacing: 0.075em;">
               <a href="/home/">
-
                   Liberty Netuschil
-
               </a>
             </h1>
 
         </div>
 
         <div id="topNav">
-          <nav class="main-nav dropdown-hover"></nav>
+            <nav class="main-nav dropdown-hover">
+                <ul data-content-field="navigation">
+                    <li class="gallery-collection active-link">
+                        <a href="/">Editorial</a>
+                    </li>
+                    <li class="gallery-collection">
+                        <a href="/bikini/">Bikini</a>
+                    </li>
+                    <li class="gallery-collection">
+                        <a href="/campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
         <div id="backToThumbs">×</div>
@@ -49,61 +61,27 @@
           <div id="slideshowWrapper" style="height: 600px;" class="slideshow-ready">
             <div id="slideshow" class="sqs-gallery-design-stacked">
 
-                <div id="slide" class="slide">
-                    <ul class="bjqs">
-                        <li>
-                          <img id="img01" alt="IMG_3465.JPG" class="loaded"
-                               src="{% static 'gallery/images/01.jpg' %}">
-                        </li>
 
-                        <li>
-                          <img id="img02" alt="IMG_3465.JPG" class="loaded"
-                               src="{% static 'gallery/images/02.jpg' %}">
-                        </li>
+            <div class="gridster">
+                <ul>
+                    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+                    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+                    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
 
-                        <li>
-                          <img id="img03" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/568cabb42399a30df61fc838/1452059575550/JGPLIB-3028.jpg?format=1500w">
-                        </li>
+                    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+                    <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
 
-                        <li>
-                          <img id="img04" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/568cabb64bf1182258ec0163/1452059578470/JGPLIB-3144.jpg?format=500w">
-                        </li>
+                    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+                    <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+                    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
 
-                        <li>
-                          <img id="img05" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55adc5a3e4b0493eb219a45b/1437452223273/IMG_3363+2.JPG?format=500w">
-                        </li>
+                    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+                    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
 
-                        <li>
-                          <img id="img06" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55adc59ce4b04cd14274eae8/1446008465913/IMG_3767.JPG?format=500w">
-                        </li>
-
-                        <li>
-                          <img id="img07" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55f8e7aee4b021eb64ca72d1/1442375626694/?format=500w">
-                        </li>
-
-                        <li>
-                          <img id="img08" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55d3afbfe4b0ada576d23930/1439936687337/Tielly+Ogura+-+Liberty+Shoot+-+Joshua-76.jpg?format=1500w">
-                        </li>
-
-                        <li>
-                          <img id="img09" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55a547fee4b00cb07c872310/1437798074254/?format=500w">
-                        </li>
-
-                        <li>
-                          <img id="img10" alt="IMG_3465.JPG" class="loaded"
-                               src="http://static1.squarespace.com/static/551af480e4b0dc90697254d7/551afd92e4b0a89d855d3a9e/55f8e5fee4b00c68108fd6fd/1442375370372/LibertyLoft11.jpg?format=1500w">
-                        </li>
-
-                    </ul>
-
-                </div>
+                    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+                    <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
+                </ul>
+            </div>
 
                 </div>
 

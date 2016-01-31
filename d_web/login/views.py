@@ -61,7 +61,7 @@ class LoginView(View):
 
 def logout_view(request):
     logout(request)
-    return render(request, "login/logout.html")
+    return HttpResponseRedirect('/login/')
 
 
 @login_required
