@@ -1,14 +1,17 @@
 jQuery(document).ready(function($) {
 
-    $('#slide1').bjqs({
-        keyboardnav : true, // enable keyboard navigation
-        hoverpause : true, // pause the slider on hover
-        automatic  : true,
-    });
-
-    $(".gridster ul").gridster({
-        widget_margins: [10, 10],
-        widget_base_dimensions: [140, 140]
-    });
-
+    $('#thumbList').justifiedGallery({
+			rowHeight : 120,
+			fixedHeight : false,
+			captions : false,
+			margins : 7,
+			sizeRangeSuffixes: {
+				'lt100':'_t',
+				'lt240':'_m',
+				'lt320':'_n',
+				'lt500':'',
+				'lt640':'_z',
+				'lt1024':'_b'
+			}
+        })
 });
