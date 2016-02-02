@@ -1,15 +1,4 @@
-.center {
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-}
-
-img {
-    max-height:100%;
-    max-width: 45%;
-    height: 333px;
-}
-
+/* body */
 body {
     font-family: Helvetica,arial,sans-serif;
     font-weight: normal;
@@ -24,6 +13,8 @@ body {
     font-size: 17px;
     -webkit-font-smoothing: subpixel antialiasing !important;
 }
+
+/* Header */
 
 #headerWrapper {
     position: relative;
@@ -47,16 +38,14 @@ body {
     clear: both;
 }
 
-#simpleControls {
-    text-align: center;
-    -webkit-user-select: none;
-    color: #9c9c9c;
-    margin-top: 20px;
+/* Link */
+
+.main-nav .active-link>a {
+    color: #000;
 }
 
-#simpleControls .control {
-    cursor: pointer;
-    color: #000;
+.main-nav a {
+    color: #9c9c9c;
 }
 
 a, a:visited {
@@ -80,6 +69,10 @@ a, a:visited {
     display: inline-block;
 }
 
+#logo {
+    margin-right: 35px;
+}
+
 .slide .loaded {
     font-size: 0px;
     top: 0px;
@@ -91,6 +84,7 @@ a, a:visited {
     margin-right: auto
 }
 
+/* close button */
 #backToThumbs {
     position: absolute;
     top: 0;
@@ -99,10 +93,6 @@ a, a:visited {
     cursor: pointer;
     padding: 20px;
     margin: -20px;
-}
-
-#logo {
-    margin-right: 35px;
 }
 
 #topNav {
@@ -159,11 +149,4 @@ pre, ul, ol, dl {
 
 ul, ol {
     list-style: none;
-}
-
-.gridster .gs-w {
-    background: #FFF;
-    cursor: pointer;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
