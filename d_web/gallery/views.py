@@ -11,3 +11,12 @@ class IndexView(LoginRequiredMixin, View):
         if not request.user.is_active:
             HttpResponseRedirect("/")
         return render(request, self.template_name)
+
+
+class SlideView(LoginRequiredMixin, View):
+    template_name = 'gallery/slide.html'
+
+    def get(self, request):
+        if not request.user.is_active:
+            HttpResponseRedirect("/")
+        return render(request, self.template_name)
