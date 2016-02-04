@@ -20,3 +20,12 @@ class SlideView(LoginRequiredMixin, View):
         if not request.user.is_active:
             HttpResponseRedirect("/")
         return render(request, self.template_name)
+
+
+class ImageView(LoginRequiredMixin, View):
+    template_name = 'gallery/image.html'
+
+    def get(self, request):
+        if not request.user.is_active:
+            HttpResponseRedirect("/")
+        return render(request, self.template_name)

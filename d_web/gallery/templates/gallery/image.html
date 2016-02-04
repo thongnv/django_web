@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>My hot gallery</title>
+    <link rel="stylesheet" href="{% static 'gallery/css/style.css' %}" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{% static 'gallery/js/gallery.js' %}"></script>
+</head>
+<body>
+
+<div id="canvasWrapper">
+    <div id="canvas">
+
+      <div id="headerWrapper">
+      <header id="header">
+
+        <div id="logo" data-content-field="site-title">
+
+            <h1 class="logo" data-shrink-original-size="40" style="letter-spacing: 0.075em;">
+                 Liberty Netuschil
+            </h1>
+
+        </div>
+
+        <div id="topNav">
+            <nav class="main-nav dropdown-hover">
+                <ul data-content-field="navigation">
+                    <li class="gallery-collection">
+                        <a href="#">Bikini</a>
+                    </li>
+                    <li class="gallery-collection active-link">
+                        <a href="/gallery/">Gallery</a>
+                    </li>
+                    <li class="gallery-collection">
+                        <a href="slide/">Slide</a>
+                    </li>
+                    <li class="gallery-collection">
+                        <a href="/home/">Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+      </header>
+      </div>
+
+
+<div id="pageWrapper">
+    <section id="page">
+        <div id="mainContent" class="clear" role="main" data-content-field="main-content">
+            <div id="galleryWrapper">
+                <div id="slideshowWrapper" style="height: 600px;" class="slideshow-ready">
+                    <div id="slideshow" class="sqs-gallery-design-stacked">
+                        <div id="grid" class="justified-gallery">
+                            <a href="img01">
+                                <img id="img01" alt="IMG_3465.JPG" class="loaded"
+                                    src="{% static 'gallery/images/01.jpg' %}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+</div>
+
+</body>
+</html>
