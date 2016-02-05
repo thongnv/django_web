@@ -34,7 +34,7 @@
                         <a href="/gallery/">Gallery</a>
                     </li>
                     <li class="gallery-collection">
-                        <a href="slide/">Slide</a>
+                        <a href="/gallery/slide/">Slide</a>
                     </li>
                     <li class="gallery-collection">
                         <a href="/home/">Home</a>
@@ -45,22 +45,15 @@
 
       </header>
       </div>
-
-
+        {{img}}
 <div id="pageWrapper">
     <section id="page">
         <div id="mainContent" class="clear" role="main" data-content-field="main-content">
-            <div id="galleryWrapper">
-                <div id="slideshowWrapper" style="height: 600px;" class="slideshow-ready">
-                    <div id="slideshow" class="sqs-gallery-design-stacked">
-                        <div id="grid" class="justified-gallery">
-                            <a href="img01">
-                                <img id="img01" alt="IMG_3465.JPG" class="loaded"
-                                    src="{% static 'gallery/images/01.jpg' %}">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div id="grid" class="center">
+                {% with 'gallery/images/'|add:img|add:'.jpg' as image_static %}
+                <img id="img01" alt="IMG_3465.JPG" class="loaded"
+                    src="{% static image_static %}" >
+                {% endwith %}
             </div>
         </div>
     </section>

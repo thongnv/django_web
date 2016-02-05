@@ -28,4 +28,4 @@ class ImageView(LoginRequiredMixin, View):
     def get(self, request):
         if not request.user.is_active:
             HttpResponseRedirect("/")
-        return render(request, self.template_name)
+        return render(request, self.template_name, {'img': request.path.split('/')[-1] or request.path.split('/')[-2]})
