@@ -45,13 +45,12 @@
 
       </header>
       </div>
-        {{img}}
 <div id="pageWrapper">
     <section id="page">
         <div id="mainContent" class="clear" role="main" data-content-field="main-content">
             <div id="grid" class="center">
                 {% with 'gallery/images/'|add:img|add:'.jpg' as image_static %}
-                <img id="img01" alt="IMG_3465.JPG" class="loaded"
+                <img id="img_view" alt="IMG_3465.JPG" class="loaded"
                     src="{% static image_static %}" >
                 {% endwith %}
             </div>
