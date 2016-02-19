@@ -155,3 +155,7 @@ ul, ol {
     width: 60%;
     padding: 10px;
 }
+
+#img_view {
+    max-height: 600px;
+}
