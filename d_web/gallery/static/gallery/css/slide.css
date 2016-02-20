@@ -97,6 +97,7 @@ a, a:visited {
     cursor: pointer;
     padding: 20px;
     margin: -20px;
+    color: #fff;
 }
 
 #topNav {
