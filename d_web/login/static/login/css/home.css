@@ -21,7 +21,7 @@ li {
 body {
     font-family: Helvetica neue, Arial, Tahoma;
     font-size: 16px;
-    background: black url("../images/home_bgrd.jpg");
+    background: black url("../images/sexy-wallpaper.jpg");
     background-size: 100% 100%;
     color: white;
     margin: 10px;
@@ -76,4 +76,8 @@ li {
     margin-left: auto;
     max-width: 100%;
     height: auto;
+}
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
