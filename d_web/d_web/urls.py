@@ -24,5 +24,6 @@ urlpatterns = [
         url(r'^polls/', include('polls.urls', namespace='polls')),
         url(r'^', include('login.urls', namespace='login')),
         url(r'^login/', include('login.urls', namespace='login')),
-        url(r'^gallery/', include('gallery.urls', namespace='gallery')),
+        url(r'^quiz/', include('quiz.urls', namespace='quiz')),
+        url(r'^quiz/', include('quiz.urls', namespace='quiz')),
 ]

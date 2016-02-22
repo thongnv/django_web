@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'myapp',
     'polls.apps.PollsConfig',
     'login.apps.LoginConfig',
-    'gallery'
+    'gallery',
+    'quiz'
 ]
 
 MIDDLEWARE_CLASSES = [

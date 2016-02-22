@@ -1,0 +1,163 @@
+/* body */
+body {
+    background-color: #000;
+    font-family: Helvetica,arial,sans-serif;
+    font-weight: normal;
+    line-height: 1.6em;
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-family: "Alice";
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    -webkit-font-smoothing: subpixel antialiasing !important;
+}
+
+/* Header */
+
+#headerWrapper {
+    position: relative;
+    z-index: 999;
+}
+
+#header {
+    padding-bottom: 40px;
+}
+
+#canvas {
+    padding: 30px;
+}
+
+#header:before, #page:before, #footer:before, footer:before, .clear:before, #header:after, #page:after, #footer:after, footer:after, .clear:after {
+    content: "";
+    display: table;
+}
+
+#header:after, #page:after, #footer:after, footer:after, .clear:after {
+    clear: both;
+}
+
+/* Link */
+
+.main-nav .active-link>a {
+    color: #E07F7F;
+}
+
+.main-nav a {
+    color: #86709C;
+}
+
+a, a:visited {
+    color: #86709C;
+    text-decoration: none;
+}
+
+.bjqs-prev a, .bjqs-next a{
+    color: #fff;
+}
+
+#logo .logo {
+    margin: 0;
+    font-weight: normal;
+    text-transform: normal;
+    font-size: 36px;
+    letter-spacing: 0px;
+    font-family: "Josefin Sans";
+    line-height: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 40px;
+    display: inline-block;
+}
+
+#logo {
+    margin-right: 35px;
+}
+
+.slide .loaded {
+    font-size: 0px;
+    top: 0px;
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* close button */
+#backToThumbs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px;
+    margin: -20px;
+    color: #fff;
+}
+
+#topNav {
+    position: relative;
+}
+
+#topNav nav {
+    position: relative;
+    bottom: 0px;
+    margin-top: 0;
+    float: left;
+}
+
+#logo, #topNav {
+    float: left;
+}
+
+#topNav nav li a {
+    padding: 10px 0;
+}
+
+#topNav nav li a {
+    line-height: 28px;
+    display: inline-block;
+}
+
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+#topNav nav li {
+    float: left;
+    margin-right: 35px;
+    position: relative;
+}
+
+pre, ul, ol, dl {
+    font-family: Helvetica,arial,sans-serif;
+    font-weight: normal;
+    line-height: 1.6em;
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-family: "Alice";
+    font-size: 17px;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 1em 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}

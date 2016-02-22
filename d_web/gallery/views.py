@@ -5,7 +5,7 @@ from django.views.generic import View
 
 
 class IndexView(LoginRequiredMixin, View):
-    template_name = 'gallery/view.html'
+    template_name = 'quiz/view.html'
 
     def get(self, request):
         if not request.user.is_active:
@@ -14,7 +14,7 @@ class IndexView(LoginRequiredMixin, View):
 
 
 class SlideView(LoginRequiredMixin, View):
-    template_name = 'gallery/slide.html'
+    template_name = 'quiz/slide.html'
 
     def get(self, request):
         if not request.user.is_active:
@@ -23,7 +23,7 @@ class SlideView(LoginRequiredMixin, View):
 
 
 class ImageView(LoginRequiredMixin, View):
-    template_name = 'gallery/image.html'
+    template_name = 'quiz/index.html'
 
     def get(self, request):
         if not request.user.is_active:
