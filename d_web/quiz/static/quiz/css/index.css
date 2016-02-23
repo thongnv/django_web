@@ -1,0 +1,20 @@
+/* body */
+body {
+    font-family: Helvetica,arial,sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel antialiasing !important;
+}
+
+.question {
+    padding-left: 200px;
+}
+
+.hidden {
+    display: none;
+}
