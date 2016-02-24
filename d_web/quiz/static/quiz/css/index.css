@@ -1,5 +1,26 @@
-/* body */
+#header {
+    font-size: larger;
+    border-bottom: 1px solid #5f99cf;
+    position: relative;
+    background-color: #cee3f8;
+    z-index: 99;
+    height: 50px
+}
+
+#header-img {
+    text-indent: -9999px;
+    background-image: url(https://www.redditstatic.com/sprite-reddit.ZDiVRxCXXWg.png);
+    background-position: 0px -313px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 120px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 3px;
+}
+
 body {
+    margin: 0;
     font-family: Helvetica,arial,sans-serif;
     font-weight: normal;
     font-size: 12px;
@@ -11,8 +32,23 @@ body {
     -webkit-font-smoothing: subpixel antialiasing !important;
 }
 
+div {
+    margin: 0;
+    padding: 0;
+}
+
 .question {
-    padding-left: 200px;
+    margin: 0;
+    margin-bottom: 8px;
+    padding-left: 3px;
+    font-size: medium;
+    font-weight: normal;
+    margin-bottom: 1px;
+    color: blue;
+    outline: none;
+    margin-right: .4em;
+    padding: 0px;
+    overflow: hidden;
 }
 
 .hidden {
