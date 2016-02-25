@@ -37,6 +37,11 @@ div {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #369;
+}
+
 .question {
     margin: 0;
     margin-bottom: 8px;
@@ -47,7 +52,6 @@ div {
     color: blue;
     outline: none;
     margin-right: .4em;
-    padding: 0px;
     overflow: hidden;
 }
 
