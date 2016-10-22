@@ -1,1 +1,14 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/django_web.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.pyc
+.sample
+venv/
+__pycache__/
+.Python
+.cache
+.config
+.git
+
