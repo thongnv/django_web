@@ -4,7 +4,7 @@ import datetime
 from django.views.generic import TemplateView
 
 from .forms import LoginForm
-from models import Dreamreal
+from .models import Dreamreal
 from django.http import HttpResponse
 
 # Create your views here.
