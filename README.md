@@ -1,1 +1,1 @@
-# django_web
+My first django - for demo purpose only
